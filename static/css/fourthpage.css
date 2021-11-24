@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
+#myphoto {
+    border-radius: 40px 40px 40px 40px;
+    box-shadow: 20px 20px 20px 1px black;
+    margin-left: 5px;
+}
+
+.mytext {
+    font-family: 'Fondamento', cursive;
+}
+
+.aboutme {
+    margin-top: 25px;
+    display: flex;
+}
+
+.mytext {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 35px;
+    margin-right: 25px;
+}
+
+#bmx_1 {
+    margin-right: 500px;
+}
+
+#bmx_2 {
+    margin-left: 500px;
+}
+
+#music_text {
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.music {
+    margin: auto;
+    width: 80%;
+}
+
+.mymusic {
+    display: flex;
+}
+
+.mymusic iframe {
+    margin-left: 30px;
+}
+
+#weather_text {
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.city {
+    margin: auto;
+    width: 60%;
+}
+
+.mycity {
+    display: flex;
+}
+
+#lviv {
+    margin-left: 50px;
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 20px 20px 20px 1px rgba(92, 140, 243, 0.349);
+}
+
+#weather {
+    margin-top: 50px;
+    border: rgb(63, 174, 248) solid;
+    box-shadow: 20px 20px 20px 1px rgb(179, 155, 79);
+    border-radius: 25px 0px 25px 0px;
+}
+
+@media screen and (max-width:1390px) {
+    .aboutme {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #lviv {
+        height: 300px;
+        width: 500px;
+        margin-left: 50px;
+    }
+}

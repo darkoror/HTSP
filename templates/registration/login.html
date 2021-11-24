@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+{% endblock links %}
+
+{% block content %}
+<div class="content-center">
+    <div>
+        <h1>Log-in</h1>
+        <p>Please, use the following form to log-in:</p>
+        <form action="." method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Log-in"></p>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
+

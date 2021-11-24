@@ -1,0 +1,85 @@
+.carousel-inner {
+    height: 800px;
+    width: 100%;
+}
+
+#photo1 {
+    height: 800px;
+    width: 100%;
+}
+
+#photo2 {
+    height: 800px;
+    width: 100%;
+}
+
+#photo3 {
+    height: 800px;
+    width: 100%;
+}
+
+#lineabout {
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.aboutus {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    justify-content: center;
+    width: 70%;
+    font-size: 20px;
+}
+
+.text {
+    width: 40%;
+}
+
+.phototext {
+    display: flex;
+    align-items: center;
+}
+
+.aboutus_photo {
+    width: 50%;
+    border-radius: 40px 40px 40px 40px;
+}
+
+#videostart {
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.videotext {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.videotext1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#video2 {
+    margin-left: 200px;
+}
+
+@media screen and (max-width:1200px) {
+    .phototext {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text {
+        width: 100%;
+    }
+}

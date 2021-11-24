@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
+.basic {
+    display: flex;
+}
+
+.navbar-brand img {
+    width: 75px;
+    height: 75px;
+}
+
+#sitename {
+    font-size: 25px;
+}
+
+.container-fluid {
+    font-family: 'Fondamento', cursive;
+    font-size: 20px;
+}
+
+.header {
+    width: 100%;
+    background: linear-gradient(40deg, rgb(0, 0, 0), rgb(104, 102, 102)) !important;
+}
+
+.header .container-fluid a {
+    color: white;
+}
+
+.header .container-fluid a:hover {
+    color: rgba(248, 252, 57, 0.938);
+}
+
+.navbar .container-fluid .nav-item a {
+    color: white;
+}
+
+.navbar .container-fluid .nav-item a:hover {
+    color: rgba(248, 252, 57, 0.938);
+}
+
+.navbar .container-fluid .nav-item .dropdown-menu a {
+    color: rgb(0, 0, 0);
+}
+
+.header .container-fluid a:focus {
+    color: rgba(248, 252, 57, 0.938);
+}
+
+.navbar .container-fluid .nav-item a:focus {
+    color: rgba(248, 252, 57, 0.938);
+}
+
+@media screen and (max-width:1255px) {
+    .nav-link {
+        width: 130px;
+    }
+}
