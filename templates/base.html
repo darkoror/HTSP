@@ -46,13 +46,13 @@
                                 <a class="nav-link" id="velo" href="{% url 'order:order-list' %}">Кошик</a>
                             </b>
                         </li>
-{#                        {% if user.is_staff %}#}
-{#                            <li class="nav-item">#}
-{#                                <b>#}
-{#                                    <a style="color: lightgreen !important" class="nav-link" id="velo" href="{% url 'reports:sales-report' %}">Звіт продажів</a>#}
-{#                                </b>#}
-{#                            </li>#}
-{#                        {% endif %}#}
+                        {% if user.is_staff %}
+                            <li class="nav-item">
+                                <b>
+                                    <a style="color: lightgreen !important" class="nav-link" id="velo" href="{% url 'reports:sales-report' %}">Звіт продажів</a>
+                                </b>
+                            </li>
+                        {% endif %}
                     </ul>
                     <div style="margin-right:1rem; display: flex">
                         {% if user.is_authenticated %}
