@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="content-center">
+        <!-- Велосипеди -->
+        <div class="main container-fluid padding">
+            <form method="get">
+                <input type="text" name="search" id="id_search" placeholder="Пошук" value="{{ filterset.form.search.value|default:'' }}">
+                {{ filterset.form.ordering }}
+                <input type="submit" />
+            </form>
+            <div class="block1" style="margin: 30px">
+                {% for product in product_list %}
+                    <div style="margin-left: 40px;margin-right: 40px">
+                        <a href="{% url 'products:product-detail' product.id %}">
+                            <img src="{{ product.image.url }}" width="470" height="370px" alt="">
+                            <hr>
+                            <h4>
+                                {{ product.name }}
+                            </h4>
+                        </a>
+                        <div>Тип: {{ product.type }}</div>
+                        <div>Виробник: {{ product.country_producer.name }}</div>
+                        <p>Ціна: {{ product.price }} грн.</p>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- ./Велосипеди -->
+    </div>
+{% endblock content %}
