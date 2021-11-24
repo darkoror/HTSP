@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="">
+        <div class="main container-fluid padding">
+            {% for order_item in orderitem_list %}
+                <div class="block1 row">
+                    <a href="{% url 'products:product-detail' order_item.product.pk %}">
+                        <h4>
+                            {{ order_item.product.name }}
+                        </h4>
+                    </a>
+                    <p>Кількість: {{ order_item.quantity }} шт.</p>
+                    <p>Ціна: {{ order_item.product.price }} грн.</p>
+                    <p>Сумарно: {{ order_item.item_price }} грн.</p>
+
+                    <form action="{% url 'order:remove-order-item' order_item.pk %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Вилучити з кошика">
+                    </form>
+                </div>
+            {% endfor %}
+            <div>
+                <p>Разом: {{ order.total_price }} грн.</p>
+                <form action="{% url 'order:make-order' %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Замовити">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

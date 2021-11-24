@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic import DetailView
 from django.views.generic.list import BaseListView, MultipleObjectTemplateResponseMixin
 
-# from basket.models import Basket
+from orders.models import Order
 from products.filters import ProductFilter
 from products.models import Product
 
@@ -22,20 +22,20 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
         return get_object_or_404(self.model, pk=self.kwargs['pk'])
 
 
-# class AddToBasketView(LoginRequiredMixin, View):
-#     """add to logic to add item to basket"""
-#     def post(self, request, pk):
-#         basket, _ = Basket.objects.get_or_create(user=request.user, is_active=True)
-#         product = get_object_or_404(Product, id=pk)
-#         basket_item, created = basket.items.get_or_create(product=product)
-#         if not created:
-#             basket_item.quantity += 1
-#             basket_item.save()
-#             messages.info(request, "Товар оновлено.")
-#         else:
-#             messages.info(request, "Товар додано в корзину.")
-#             pass
-#         return redirect("products:product-detail", pk)
+class AddToOrderView(LoginRequiredMixin, View):
+    """add to logic to add item to order"""
+    def post(self, request, pk):
+        order, _ = Order.objects.get_or_create(user=request.user, is_active=True)
+        product = get_object_or_404(Product, id=pk)
+        order_item, created = order.items.get_or_create(product=product)
+        if not created:
+            order_item.quantity += 1
+            order_item.save()
+            messages.info(request, f"Товарів у корзині {order_item.quantity}.")
+        else:
+            messages.info(request, "Товар додано в корзину.")
+            pass
+        return redirect("products:product-detail", pk)
 
 
 class ProductListView(LoginRequiredMixin, MultipleObjectTemplateResponseMixin, BaseListView):

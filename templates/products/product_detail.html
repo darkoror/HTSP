@@ -18,18 +18,18 @@
             {{ product.country_producer }}
         </div>
         <div>
-            <b>Вага: </b>
-            {{ product.type }} кг.
+            <b>Тип: </b>
+            {{ product.type }}
         </div>
         <div>
             <b>Ціна: </b>
             {{ product.price }} грн.
         </div>
 
-{#        <form action="{% url 'products:add-to-basket' product.pk %}" method="post">#}
-{#            {% csrf_token %}#}
-{#            <input type="submit" value="Додати до кошика">#}
-{#        </form>#}
+        <form action="{% url 'products:add-to-order' product.pk %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Додати до кошика">
+        </form>
 
     </div>
 {% endblock content %}

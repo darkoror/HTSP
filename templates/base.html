@@ -41,14 +41,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'products:product-list' %}">Товари</a>
                         </li>
-{#                        <li class="nav-item">#}
-{#                            <a class="nav-link" href="{% url 'workshop' %}">Веломайстерня</a>#}
-{#                        </li>#}
-{#                        <li class="nav-item">#}
-{#                            <b>#}
-{#                                <a class="nav-link" id="velo" href="{% url 'basket:basket-list' %}">Корзина</a>#}
-{#                            </b>#}
-{#                        </li>#}
+                        <li class="nav-item">
+                            <b>
+                                <a class="nav-link" id="velo" href="{% url 'order:order-list' %}">Кошик</a>
+                            </b>
+                        </li>
 {#                        {% if user.is_staff %}#}
 {#                            <li class="nav-item">#}
 {#                                <b>#}
