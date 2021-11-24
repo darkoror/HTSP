@@ -1,0 +1,32 @@
+version: '3.5'
+
+volumes:
+  postgres-data:
+  redis-data:
+networks:
+  htsp-net:
+
+services:
+  postgres:
+    container_name: htsp_postgres
+    image: postgres:14.0
+    env_file: .env
+    ports:
+      - 5439:5432
+    restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - htsp-net
+
+#  redis:
+#    container_name: htsp_redis
+#    image: redis:latest
+#    entrypoint: redis-server --appendonly yes
+#    ports:
+#      - 6391:6379
+#    restart: always
+#    volumes:
+#      - redis-data:/data
+#    networks:
+#      - htsp-net
