@@ -154,13 +154,13 @@ SESSION_EXPIRY_HOURS = env.int('SESSION_EXPIRY_HOURS', 2)
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 DJANGO_LOG_PATH = env.str('DJANGO_LOG_PATH', os.path.join(BASE_DIR, ".data/django/django.log"))
-CELERY_LOG_PATH = env.str('CELERY_LOG_PATH', os.path.join(BASE_DIR, ".data/django/celery.log"))
+# CELERY_LOG_PATH = env.str('CELERY_LOG_PATH', os.path.join(BASE_DIR, ".data/django/celery.log"))
 
 if not os.path.exists(os.path.dirname(DJANGO_LOG_PATH)):
     os.makedirs(os.path.dirname(DJANGO_LOG_PATH))
 
-if not os.path.exists(os.path.dirname(CELERY_LOG_PATH)):
-    os.makedirs(os.path.dirname(CELERY_LOG_PATH))
+# if not os.path.exists(os.path.dirname(CELERY_LOG_PATH)):
+#     os.makedirs(os.path.dirname(CELERY_LOG_PATH))
 
 LOGFILE_SIZE = 5 * 1024 * 1024
 
@@ -184,13 +184,13 @@ LOGGING = {
             'maxBytes': LOGFILE_SIZE,
             'formatter': 'base'
         },
-        'celery_file': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': CELERY_LOG_PATH,
-            'maxBytes': LOGFILE_SIZE,
-            'formatter': 'base'
-        },
+        # 'celery_file': {
+        #     'level': 'DEBUG',
+        #     'class': 'logging.handlers.RotatingFileHandler',
+        #     'filename': CELERY_LOG_PATH,
+        #     'maxBytes': LOGFILE_SIZE,
+        #     'formatter': 'base'
+        # },
     },
     'loggers': {
         'django': {
@@ -198,11 +198,11 @@ LOGGING = {
             'level': env.log_level('DJANGO_LOG_LEVEL', 'INFO'),
             'propagate': True
         },
-        'celery': {
-            'handlers': ['console', 'celery_file'],
-            'level': env.log_level('CELERY_LOG_LEVEL', 'INFO'),
-            'propagate': True
-        },
+        # 'celery': {
+        #     'handlers': ['console', 'celery_file'],
+        #     'level': env.log_level('CELERY_LOG_LEVEL', 'INFO'),
+        #     'propagate': True
+        # },
     },
 }
 
